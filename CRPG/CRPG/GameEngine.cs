@@ -14,7 +14,9 @@ namespace CRPG
         { //tells us the standard info on game, such as version
             Console.WriteLine("Initializing Game Engine...");  
             Console.WriteLine("This is verion {0}", Version);
-
+            Console.WriteLine("Welcome to the World of {0}", World.WorldName);
+            Console.WriteLine();
+            World.ListLocations();
         }
     }
 }
