@@ -14,11 +14,36 @@ namespace CRPG
             Console.WriteLine("I'm Zach");
             GameEngine.Initialize();
             _player.Name = "Zach";
-
-
-
+            while (true)
+            {
+                Console.Write("> ");
+                string userInput = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(userInput))
+                {
+                    continue;
+                }
+                string cleanedInput = userInput.ToLower();
+                if(cleanedInput == "exit")
+                {
+                    break;
+                }
+                ParseInput(cleanedInput);
+            } //while
 
             Console.ReadLine();
+        } //main
+        public static void ParseInput(string input)
+        {
+            if (input.Contains("help"))
+            {
+                Console.WriteLine("Help is coming later...stay tuned.");
+            } else if (input.Contains("look"))
+            {
+                //DisplayCurrenLocation
+            } else
+            {
+                Console.WriteLine("Don't Understand.");
+            }
         }
     }
 }
