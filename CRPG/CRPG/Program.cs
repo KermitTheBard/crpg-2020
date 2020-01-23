@@ -14,6 +14,12 @@ namespace CRPG
             Console.WriteLine("I'm Zach");
             GameEngine.Initialize();
             _player.Name = "Zach";
+            _player.MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
+
+
+
+
+
             while (true)
             {
                 Console.Write("> ");
@@ -39,10 +45,38 @@ namespace CRPG
                 Console.WriteLine("Help is coming later...stay tuned.");
             } else if (input.Contains("look"))
             {
-                //DisplayCurrenLocation
-            } else
+                DisplayCurrentLocation();
+            } else if (input.Contains("north"))
+            {
+                _player.MoveNorth();
+                DisplayCurrentLocation();
+            }
+            else if (input.Contains("west"))
+            {
+                _player.MoveWest();
+                DisplayCurrentLocation();
+            }
+            else if (input.Contains("east"))
+            {
+                _player.MoveEast();
+                DisplayCurrentLocation();
+            }
+            else if (input.Contains("south"))
+            {
+                _player.MoveSouth();
+                DisplayCurrentLocation();
+            }
+            else
             {
                 Console.WriteLine("Don't Understand.");
+            }
+        }
+        private static void DisplayCurrentLocation()
+        {
+            Console.WriteLine("You are at: {0}", _player.CurrentLocation.Name);
+            if (_player.CurrentLocation.Description != "")
+            {
+                Console.WriteLine("\t{0}", _player.CurrentLocation.Description);
             }
         }
     }
