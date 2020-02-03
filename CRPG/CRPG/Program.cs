@@ -8,12 +8,11 @@ namespace CRPG
 {
     class Program
     {
-        private static Player _player = new Player();
+        private static Player _player = new Player("Zach", 10, 10, 20, 0, 1);
         static void Main(string[] args)
         {
             Console.WriteLine("I'm Zach");
             GameEngine.Initialize();
-            _player.Name = "Zach";
             _player.MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
 
 
