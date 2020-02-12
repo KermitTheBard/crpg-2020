@@ -25,6 +25,7 @@ namespace CRPG
             Inventory = new List<InventoryItem>();
             Quests = new List<PlayerQuest>();
         }
+
         public Player() { }
         public void MoveTo(Location loc)
         {
@@ -48,7 +49,7 @@ namespace CRPG
                 
 
             }
-            
+            CurrentLocation = loc;
         }
         public void MoveNorth()
         {

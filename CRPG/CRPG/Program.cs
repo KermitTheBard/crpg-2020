@@ -13,6 +13,7 @@ namespace CRPG
         {
             GameEngine.Initialize();
             _player.MoveTo(World.LocationByID(World.LOCATION_ID_HOME));
+
             InventoryItem sword = new InventoryItem(World.ItemByID(World.ITEM_ID_RUSTY_SWORD), 1);
             InventoryItem club = new InventoryItem(World.ItemByID(World.ITEM_ID_CLUB), 1);
             //InventoryItem aPass = new InventoryItem(World.ItemByID(World.ITEM_ID_ADVENTURER_PASS), 1);
