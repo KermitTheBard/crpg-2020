@@ -28,7 +28,27 @@ namespace CRPG
         public Player() { }
         public void MoveTo(Location loc)
         {
-            CurrentLocation = loc;
+            //Check if item is needed to go
+            if (loc.ItemRequiredToEnter != null)
+            {
+                bool playerHasItem = false;
+                foreach(InventoryItem ii in this.Inventory)
+                {
+                    if (ii.Details.ID == loc.ItemRequiredToEnter.ID)
+                    {
+                        playerHasItem = true;
+                        break;
+                    }
+                }
+                if (!playerHasItem)
+                {
+                    Console.WriteLine("You must have a {0} to enter this location.", loc.ItemRequiredToEnter.Name);
+                    return;
+                }
+                
+
+            }
+            
         }
         public void MoveNorth()
         {

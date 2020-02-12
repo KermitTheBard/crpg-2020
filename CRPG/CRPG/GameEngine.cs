@@ -8,7 +8,7 @@ namespace CRPG
 {
     public static class GameEngine
     {
-        public static string Version = "0.0.2";
+        public static string Version = "0.0.3";
 
         public static void Initialize()
         { //tells us the standard info on game, such as version
@@ -16,11 +16,18 @@ namespace CRPG
             Console.WriteLine("This is verion {0}", Version);
             Console.WriteLine("Welcome to the World of {0}", World.WorldName);
             Console.WriteLine();
+            //World.ListLocations();
+            //World.ListItems();
+            //World.ListMonsters();
+            //World.ListQuests();
+
+        }
+        public static void DebugInfo()
+        {
             World.ListLocations();
             World.ListItems();
             World.ListMonsters();
             World.ListQuests();
-
         }
     }
 }

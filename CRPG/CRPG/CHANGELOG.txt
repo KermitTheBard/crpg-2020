@@ -1,0 +1,12 @@
+﻿Proposed changes for v0.0.3
++Added CHANGELOG
++Debug Commands
++Stats for player
++Inventory systen
++Random Numbers
++WhereAmI, kind of like look
++Shortcut navigation
++Location Requirement
+
+//ToDo: (-)
+//Done: (+)
